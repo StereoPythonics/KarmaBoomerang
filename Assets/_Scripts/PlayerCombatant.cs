@@ -8,7 +8,7 @@ namespace KarmaBoomerang
     {
         public float moveAcceleration;
         public Vector2 acceleration;
-        // Start is called before the first frame update
+
         void Start()
         {
 
