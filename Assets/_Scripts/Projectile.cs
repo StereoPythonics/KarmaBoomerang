@@ -19,6 +19,25 @@ namespace KarmaBoomerang
         {
 
         }
+
+        void HitCombatant(Combatant combatant)
+        {
+            combatant.isDead &= (combatant != shooter && !hasBounced) || (combatant == shooter && hasBounced);
+        }
+
+        public void DetermineHit(GameObject hitObj)
+        {
+            Combatant combatant = hitObj.GetComponent<Combatant>();
+            if (combatant != null)
+            {
+                HitCombatant(combatant);
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            DetermineHit(collision.gameObject);
+        }
     }
 }
 

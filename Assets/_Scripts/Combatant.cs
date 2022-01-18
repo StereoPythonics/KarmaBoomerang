@@ -10,22 +10,8 @@ namespace KarmaBoomerang
         public float speed; //like max?
         public Collider2D myCollider;
         public bool isDead;
+        public Rigidbody2D myBody;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        private void Awake()
-        {
-
-        }
-
-        private void OnEnable()
-        {
-
-        }
 
         // Update is called once per frame
         void Update()
@@ -33,10 +19,7 @@ namespace KarmaBoomerang
 
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-
-        }
+        
     }
 }
 
