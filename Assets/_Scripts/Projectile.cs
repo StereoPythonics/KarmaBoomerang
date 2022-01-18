@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+namespace KarmaBoomerang
 {
-    public Combatant shooter;
-    public bool hasBounced;
-    // Start is called before the first frame update
-    void Start()
+    public class Projectile : MonoBehaviour
     {
-        
-    }
+        public Combatant shooter;
+        public bool hasBounced;
+        // Start is called before the first frame update
+        void Start()
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }
+
