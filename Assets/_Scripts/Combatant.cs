@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace KarmaBoomerang
 {
-    public class Player : MonoBehaviour
+    public class Combatant : MonoBehaviour
     {
         public float speed; //like max?
         public Collider2D myCollider;
@@ -35,7 +35,7 @@ namespace KarmaBoomerang
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            
+
         }
     }
 }
