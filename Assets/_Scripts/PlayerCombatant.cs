@@ -7,8 +7,8 @@ namespace KarmaBoomerang
     public class PlayerCombatant : Combatant
     {
         public float moveAcceleration;
-        Vector2 acceleration = new Vector2(0,0);
-        // Start is called before the first frame update
+        public Vector2 acceleration;
+
         void Start()
         {
 
