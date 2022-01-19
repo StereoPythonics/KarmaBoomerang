@@ -570,7 +570,7 @@ MonoBehaviour:
   myCollider: {fileID: 719147463}
   isDead: 0
   myBody: {fileID: 719147465}
-  moveAcceleration: 100
+  moveAcceleration: 1
 --- !u!50 &719147465
 Rigidbody2D:
   serializedVersion: 4
