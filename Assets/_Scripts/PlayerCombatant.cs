@@ -8,7 +8,7 @@ namespace KarmaBoomerang
     {
         public float moveAcceleration;
         public Vector2 acceleration;
-        IMovementScheme movementScheme = new NormalizedDirectMovement(KeyMappingFactory.GetInputMappings(1));
+        IMovementScheme movementScheme = new SmoothedNormalizedDirectMovement();
         void Start()
         {
 
@@ -39,7 +39,7 @@ namespace KarmaBoomerang
             .Aggregate((v0,v1) => v0 + v1);
         }
 
-        public void ApplyInput(Rigidbody2D target)
+        public virtual void ApplyInput(Rigidbody2D target)
         {
             target.AddForce(GetForce(target.velocity));
         }
@@ -67,7 +67,7 @@ namespace KarmaBoomerang
     {
         Dictionary<InputAction,KeyCode> _inputMapping;
         public float speed = 10;
-        public void ApplyInput(Rigidbody2D target)
+        public virtual void ApplyInput(Rigidbody2D target)
         {
             target.velocity = GetDesiredVelocity();
         }
@@ -89,7 +89,16 @@ namespace KarmaBoomerang
         {
             return base.GetDesiredVelocity().normalized*speed;
         }
-
+    }
+    public class SmoothedNormalizedDirectMovement:NormalizedDirectMovement
+    {
+        float smoothingFactor = 5;
+        float inverseSmoothingFactor => 1.0f/smoothingFactor;
+        public SmoothedNormalizedDirectMovement(Dictionary<InputAction,KeyCode> inputMapping = null ):base(inputMapping){}
+        public override void ApplyInput(Rigidbody2D target)
+        {
+            target.velocity = (target.velocity * (1-inverseSmoothingFactor)) + (inverseSmoothingFactor)*GetDesiredVelocity();
+        }
     }
 
 
