@@ -1,5 +1,3 @@
-
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -24,4 +22,6 @@ namespace KarmaBoomerang
             .Aggregate((v0,v1) => v0 + v1)*speed;
         }
     }
+    
 }
+

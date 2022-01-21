@@ -1,8 +1,3 @@
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
 namespace KarmaBoomerang
 {
     public enum InputAction
@@ -12,4 +7,6 @@ namespace KarmaBoomerang
         MoveLeft,
         MoveDown
     }
+    
 }
+

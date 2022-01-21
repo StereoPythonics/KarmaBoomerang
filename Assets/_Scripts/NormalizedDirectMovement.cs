@@ -1,8 +1,5 @@
-
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 namespace KarmaBoomerang
 {
     public class NormalizedDirectMovement : BasicDirectMovement
@@ -13,4 +10,6 @@ namespace KarmaBoomerang
             return base.GetDesiredVelocity().normalized*speed;
         }
     }
+    
 }
+

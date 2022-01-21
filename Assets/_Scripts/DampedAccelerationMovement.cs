@@ -1,8 +1,5 @@
-
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 namespace KarmaBoomerang
 {
     public class DampedAccelerationMovement : NormalizedAccelerationMovement
@@ -14,4 +11,6 @@ namespace KarmaBoomerang
             return base.GetForce(velocity) - (velocity*acceleration/TopSpeed);
         }
     }
+    
 }
+

@@ -1,8 +1,5 @@
-
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 namespace KarmaBoomerang
 {
     public class SmoothedNormalizedDirectMovement:NormalizedDirectMovement
@@ -15,4 +12,6 @@ namespace KarmaBoomerang
             target.velocity = (target.velocity * (1-inverseSmoothingFactor)) + (inverseSmoothingFactor)*GetDesiredVelocity();
         }
     }
+    
 }
+
