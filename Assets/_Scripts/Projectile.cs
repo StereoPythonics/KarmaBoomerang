@@ -7,6 +7,8 @@ namespace KarmaBoomerang
     public class Projectile : MonoBehaviour
     {
         public Combatant shooter;
+        public Collider2D myCollider;
+        public Rigidbody2D myBody;
         public bool hasBounced;
         // Start is called before the first frame update
         void Start()
