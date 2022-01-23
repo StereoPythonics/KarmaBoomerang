@@ -24,9 +24,9 @@ namespace KarmaBoomerang
         {
             Debug.Log("Combatant Hit");
             if((combatant != shooter && !hasBounced) || (combatant == shooter && hasBounced)){
-                 combatant.isDead = true;
-                 combatant.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0,1);
-                 this.gameObject.SetActive(false);
+                this.gameObject.SetActive(false);
+                 (combatant as PlayerCombatant)?.KillAndEndRound();
+                 
             }
             
         }
