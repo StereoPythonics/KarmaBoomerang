@@ -10,6 +10,10 @@ namespace KarmaBoomerang
         MoveUp,
         MoveRight,
         MoveLeft,
-        MoveDown
+        MoveDown,
+        Shoot,
+        RotateClockwise,
+        RotateAntiClockwise
+        
     }
 }

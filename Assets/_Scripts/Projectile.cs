@@ -13,7 +13,6 @@ namespace KarmaBoomerang
         // Start is called before the first frame update
         void Start()
         {
-
         }
 
         // Update is called once per frame
@@ -21,10 +20,15 @@ namespace KarmaBoomerang
         {
 
         }
-
         void HitCombatant(Combatant combatant)
         {
-            combatant.isDead &= (combatant != shooter && !hasBounced) || (combatant == shooter && hasBounced);
+            Debug.Log("Combatant Hit");
+            if((combatant != shooter && !hasBounced) || (combatant == shooter && hasBounced)){
+                 combatant.isDead = true;
+                 combatant.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0,1);
+                 this.gameObject.SetActive(false);
+            }
+            
         }
 
         public void DetermineHit(GameObject hitObj)
@@ -34,10 +38,10 @@ namespace KarmaBoomerang
             {
                 HitCombatant(combatant);
             }
+            this.hasBounced |= hitObj.name.Contains("Wall");
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
+        private void OnCollisionEnter2D(Collision2D collision) {
             DetermineHit(collision.gameObject);
         }
     }

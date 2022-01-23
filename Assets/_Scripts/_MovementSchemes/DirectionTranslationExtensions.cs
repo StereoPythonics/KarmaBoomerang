@@ -14,7 +14,17 @@ namespace KarmaBoomerang
                 InputAction.MoveUp => Vector2.up,
                 InputAction.MoveLeft => Vector2.left,
                 InputAction.MoveDown => Vector2.down,
-                InputAction.MoveRight => Vector2.right
+                InputAction.MoveRight => Vector2.right,
+                _ => Vector2.zero
+            };
+        }
+        public static float ToRotation(this InputAction inputAction)
+        {
+            return inputAction switch
+            {
+                InputAction.RotateAntiClockwise => 1,
+                InputAction.RotateClockwise => -1,
+                _ => 0
             };
         }
 
