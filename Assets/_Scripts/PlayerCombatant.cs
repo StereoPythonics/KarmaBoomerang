@@ -27,23 +27,36 @@ namespace KarmaBoomerang
         {
             isDead = true;
             gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
-            Task.Run(() =>
-            {
-                Thread.Sleep(3000);
-                Debug.Log("Reloading Scene");
 
-                ThreadingCheat.RegisterActionForMainThread(() =>
-                {
-                    string scene = SceneManager.GetActiveScene().name;
-                    //Load it
-                    Debug.Log(scene);
-                    SceneManager.LoadScene(scene, LoadSceneMode.Single);
-                    Debug.Log("Done");
-                });
-            });
+            StartCoroutine("resetScene");
+            //Task.Run(() =>
+            //{
+            //    Thread.Sleep(3000);
+            //    Debug.Log("Reloading Scene");
+
+            //    ThreadingCheat.RegisterActionForMainThread(() =>
+            //    {
+            //        string scene = SceneManager.GetActiveScene().name;
+            //        //Load it
+            //        Debug.Log(scene);
+            //        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+            //        Debug.Log("Done");
+            //    });
+            //});
 
 
         }
+
+        private IEnumerator resetScene()
+        {
+            yield return new WaitForSeconds(3);
+            string scene = SceneManager.GetActiveScene().name;
+            //Load it
+            Debug.Log(scene);
+            SceneManager.LoadScene(scene, LoadSceneMode.Single);
+            Debug.Log("Done");
+        }
+
         // Update is called once per frame
         void Update()
         {
