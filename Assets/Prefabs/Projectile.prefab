@@ -137,4 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
+  myCollider: {fileID: 7215627233159266756}
+  myBody: {fileID: 7215627233159266755}
   hasBounced: 0
